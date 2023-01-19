@@ -1,0 +1,22 @@
+set(ERASER_SOURCES
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/drive_eraser.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/encryption_checker.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/file_shredder.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/posix_file_eraser.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/random_generator.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/shredder_cache.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/shredder_datatbase.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/shredder_file_properties.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/win_file_eraser.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/eraser/drive_eraser.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/eraser/encryption_checker.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/eraser/file_shredder.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/eraser/posix_file_eraser.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/eraser/random_generator.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/eraser/shredder_cache.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/eraser/shredder_callback_interface.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/eraser/shredder_datatbase.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/eraser/shredder_file_info.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/eraser/shredder_file_properties.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/eraser/win_file_eraser.h
+)
