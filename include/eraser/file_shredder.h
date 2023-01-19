@@ -1,9 +1,9 @@
 #pragma once
-#include <file_shredder/shredder_callback_interface.h>
-#include <file_shredder/shredder_datatbase.h>
-#include <file_shredder/shredder_file_info.h>
-#include <helpers/thread_pool.h>
-#include <helpers/partition_information.h>
+#include <eraser/shredder_callback_interface.h>
+#include <eraser/shredder_datatbase.h>
+#include <eraser/shredder_file_info.h>
+#include <winapi-helpers/thread_pool.h>
+#include <winapi-helpers/partition_information.h>
 
 //#if (_MSC_VER > 1900)
 

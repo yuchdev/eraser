@@ -9,10 +9,10 @@
 #include <cstdint>
 #include <future>
 #include <mutex>
-#include <helpers/partition_information.h>
-#include <helpers/dynamic_handler_map.h>
-#include <file_shredder/random_generator.h>
-#include <file_shredder/shredder_file_info.h>
+#include <winapi-helpers/partition_information.h>
+#include <winapi-helpers/dynamic_handler_map.h>
+#include <eraser/random_generator.h>
+#include <eraser/shredder_file_info.h>
 
 
 namespace boost {

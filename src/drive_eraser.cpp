@@ -8,7 +8,7 @@
 #endif
 
 #include <plog/Log.h>
-#include <helpers/utilities.h>
+#include <winapi-helpers/utilities.h>
 #include <eraser/encryption_checker.h>
 
 #include <boost/filesystem.hpp>

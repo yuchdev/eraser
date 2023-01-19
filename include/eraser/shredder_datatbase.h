@@ -1,6 +1,6 @@
 #pragma once
-#include <file_shredder/shredder_file_info.h>
-#include <helpers/sqlite3_helper.h>
+#include <eraser/shredder_file_info.h>
+#include <winapi-helpers/sqlite3_helper.h>
 
 #include <cstdint>
 #include <utility>

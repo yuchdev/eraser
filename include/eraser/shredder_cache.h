@@ -1,7 +1,7 @@
 #pragma once
-#include <file_shredder/shredder_file_info.h>
-#include <file_shredder/drive_eraser.h>
-#include <helpers/partition_information.h>
+#include <eraser/shredder_file_info.h>
+#include <eraser/drive_eraser.h>
+#include <winapi-helpers/partition_information.h>
 
 #include <map>
 #include <set>

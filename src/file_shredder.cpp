@@ -2,10 +2,10 @@
 #include <eraser/shredder_cache.h>
 
 #include <eraser/encryption_checker.h>
-#include <helpers/md5.h>
-#include <helpers/hardware_information.h>
+#include <winapi-helpers/md5.h>
+#include <winapi-helpers/hardware_information.h>
 #include <plog/Log.h>
-#include <helpers/utilities.h>
+#include <winapi-helpers/utilities.h>
 
 
 #include <boost/filesystem.hpp>

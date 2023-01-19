@@ -1,8 +1,8 @@
 #include <eraser/shredder_datatbase.h>
 #include <eraser/shredder_file_info.h>
-#include <helpers/utilities.h>
+#include <winapi-helpers/utilities.h>
 #include <plog/Log.h>
-#include <helpers/special_path_helper.h>
+#include <winapi-helpers/special_path_helper.h>
 
 #include <boost/format.hpp>
 #include <boost/filesystem.hpp>

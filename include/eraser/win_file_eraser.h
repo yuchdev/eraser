@@ -3,8 +3,8 @@
 #include <string>
 #include <random>
 #include <Windows.h>
-#include <file_shredder/encryption_checker.h>
-#include <helpers/partition_information.h>
+#include <eraser/encryption_checker.h>
+#include <winapi-helpers/partition_information.h>
 
 namespace shredder {
 

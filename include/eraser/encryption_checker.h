@@ -1,5 +1,5 @@
 #pragma once
-#include <file_shredder/shredder_callback_interface.h>
+#include <eraser/shredder_callback_interface.h>
 
 #include <algorithm>
 #include <vector>

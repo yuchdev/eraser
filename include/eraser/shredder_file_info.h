@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <cstdint>
-#include <file_shredder/shredder_file_properties.h>
+#include <eraser/shredder_file_properties.h>
 
 
 namespace shredder {
