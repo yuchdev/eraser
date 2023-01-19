@@ -7,7 +7,6 @@ message("BUILD_SHARED_LIBS=" ${BUILD_SHARED_LIBS})
 message("CMAKE_BUILD_TYPE=" ${CMAKE_BUILD_TYPE})
 
 # ---- Frameworks and components ----
-
 if(${BOOST_ROOT})
     set(BOOST_MIN_VERSION "1.74.0")
     set(Boost_ADDITIONAL_VERSIONS "1.74.0" "1.74")
@@ -19,7 +18,7 @@ find_package(PythonInterp REQUIRED)
 message("Python executable: " ${PYTHON_EXECUTABLE})
 
 # Define DEBUG_DATABASE=1 so that 'eraser' file has been used 
-# from application debug working directory instead of C:\ProgramData\CyberYozh
+# from application debug working directory instead of C:\ProgramData\SecureEraser
 if(DEBUG_DATABASE)
     add_definitions(-DDEBUG_DATABASE)
 endif()
@@ -65,7 +64,7 @@ if(${BOOST_ROOT})
     add_subdirectory(test/functional_test)
 endif()
 
-# ---- Additional bulid steps ----
+# ---- Additional build steps ----
 set(DEBUG_CREATE_DATABASE  ${CMAKE_BINARY_DIR})
 set(RELEASE_CREATE_DATABASE ${CMAKE_BINARY_DIR}/db)
 
