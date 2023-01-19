@@ -9,12 +9,10 @@ message("CMAKE_C_COMPILER=" ${CMAKE_C_COMPILER})
 message("CMAKE_CXX_COMPILER=" ${CMAKE_CXX_COMPILER})
 
 # ---- Frameworks and components ----
-if(${BOOST_ROOT})
-    set(BOOST_MIN_VERSION "1.74.0")
-    set(Boost_ADDITIONAL_VERSIONS "1.74.0" "1.74")
-    set(Boost_USE_STATIC_LIBS ON)
-    find_package(Boost COMPONENTS unit_test_framework REQUIRED)
-endif()
+set(BOOST_MIN_VERSION "1.74.0")
+set(Boost_ADDITIONAL_VERSIONS "1.74.0" "1.74")
+set(Boost_USE_STATIC_LIBS ON)
+find_package(Boost ${BOOST_MIN_VERSION} COMPONENTS unit_test_framework system chrono date_time thread filesystem atomic REQUIRED)
 
 find_package(PythonInterp REQUIRED)
 message("Python executable: " ${PYTHON_EXECUTABLE})
@@ -51,6 +49,7 @@ target_include_directories(${ERASER_TARGET}
         ${CMAKE_SOURCE_DIR}/winapi-helpers/include
         ${CMAKE_SOURCE_DIR}/cryptography/include
         ${CMAKE_SOURCE_DIR}/plog/include
+        ${Boost_INCLUDE_DIRS}
 )
 
 # ---- Library dependencies ----
@@ -70,11 +69,13 @@ endif()
 set(DEBUG_CREATE_DATABASE  ${CMAKE_BINARY_DIR})
 set(RELEASE_CREATE_DATABASE ${CMAKE_BINARY_DIR}/db)
 
-add_custom_command(TARGET ${ERASER_TARGET}
-    POST_BUILD
-    COMMAND ${PYTHON_EXECUTABLE} create_database.py --db-name eraser --output-dir "$<$<CONFIG:debug>:${DEBUG_CREATE_DATABASE}>$<$<CONFIG:release>:${RELEASE_CREATE_DATABASE}>"
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../scripts
-    COMMENT "Creating database for debug..."
-)
+if(MSVS_BULID)
+    add_custom_command(TARGET ${ERASER_TARGET}
+        POST_BUILD
+        COMMAND ${PYTHON_EXECUTABLE} create_database.py --db-name eraser --output-dir "$<$<CONFIG:debug>:${DEBUG_CREATE_DATABASE}>$<$<CONFIG:release>:${RELEASE_CREATE_DATABASE}>"
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../scripts
+        COMMENT "Creating database for debug..."
+    )
+endif()
 
 # ---- Install rules ----

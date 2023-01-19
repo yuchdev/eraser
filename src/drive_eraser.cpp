@@ -49,6 +49,16 @@ DriveEraser::DriveEraser(ErasureMethod erasure_method,
         ;
 }
 
+DriveEraser::DriveEraser(
+    ErasureMethod erasure_method,
+    int disk_type,
+    std::vector<PartititonInformation::PortablePartititon>& partitions)
+    : erasure_method_(erasure_method)
+    , disk_type_(DriveEraser::DiskType::SSD)
+    , partitions_(partitions)
+{
+}
+
 void DriveEraser::submit(const std::wstring& root, const std::wstring& file_path, double entropy)
 {
     std::lock_guard<std::mutex> l(files_lock_);

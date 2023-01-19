@@ -4,13 +4,12 @@
 #include <fstream>
 #include <cassert>
 #include <stdexcept>
-
-#include <boost/filesystem.hpp>
+#include <filesystem>
 
 using namespace std;
 using namespace shredder;
 
-namespace fs = boost::filesystem;
+namespace fs = std::filesystem;
 
 bool ShannonEncryptionChecker::load_uint8_codecvt_;
 bool ShannonEncryptionChecker::interrupt_all_ = false;

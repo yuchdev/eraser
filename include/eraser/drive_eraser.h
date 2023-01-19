@@ -56,8 +56,16 @@ public:
     };
 
     // @brief Also accept erasure type (Smart by default) and disk type
-    DriveEraser(ErasureMethod erasure_method, DiskType disk_type, std::vector<helpers::PartititonInformation::PortablePartititon>& partitions);
-
+    DriveEraser(
+        ErasureMethod erasure_method,
+        DiskType disk_type,
+        std::vector<helpers::PartititonInformation::PortablePartititon>& partitions);
+#if 1
+    DriveEraser(ErasureMethod erasure_method,
+                int disk_type,
+                std::vector<helpers::PartititonInformation::PortablePartititon>&
+                partitions);
+#endif
     // @brief Satisfy compiler
     ~DriveEraser() = default;
 
