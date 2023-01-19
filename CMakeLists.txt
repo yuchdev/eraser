@@ -5,6 +5,8 @@ project(${ERASER_TARGET} CXX)
 
 message("BUILD_SHARED_LIBS=" ${BUILD_SHARED_LIBS})
 message("CMAKE_BUILD_TYPE=" ${CMAKE_BUILD_TYPE})
+message("CMAKE_C_COMPILER=" ${CMAKE_C_COMPILER})
+message("CMAKE_CXX_COMPILER=" ${CMAKE_CXX_COMPILER})
 
 # ---- Frameworks and components ----
 if(${BOOST_ROOT})
