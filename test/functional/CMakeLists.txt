@@ -14,7 +14,7 @@ target_link_libraries(${TARGET}
 PRIVATE 
     ${Boost_LIBRARIES} 
     winapi_helpers 
-    file_shredder
+    eraser
 )
 
 add_test(NAME ${TARGET} COMMAND ${TARGET})
