@@ -61,9 +61,8 @@ target_link_libraries(${ERASER_TARGET}
 
 # ---- Enable testing ----
 # We use Boost Test, so include it only if Boost root is known
-if(${BOOST_ROOT})
-    add_subdirectory(test/functional_test)
-endif()
+add_subdirectory(test/functional)
+
 
 # ---- Additional build steps ----
 set(DEBUG_CREATE_DATABASE  ${CMAKE_BINARY_DIR})
