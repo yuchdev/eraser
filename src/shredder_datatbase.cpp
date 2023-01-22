@@ -39,7 +39,20 @@ int ShredderDatabaseWrapper::select_callback(void *raw_data, int column_count, c
 // static 
 std::string ShredderDatabaseWrapper::database_name()
 {
+#if defined(DEBUG_DATABASE)
     return std::string{ "eraser" };
+#else
+    std::wstring wpath = helpers::get_common_appdata_wpath();
+	wpath.append(L"CyberYozh\\");
+	boost::system::error_code error;
+	if (!boost::filesystem::is_directory(wpath)) {
+		boost::filesystem::create_directory(wpath, error);
+	}
+	wpath.append(L"eraser");
+    std::string path = wstring_to_string(wpath).c_str();
+	LOG_DEBUG << "DB path " << path;
+    return std::move(path);
+#endif
 }
 
 

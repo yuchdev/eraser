@@ -11,17 +11,19 @@ ShredderCache::ShredderCache()
 
     for (int drive_index : physical_drives) {
 
-        std::vector<PartititonInformation::NativePartititon> parts =
+        std::vector<PartititonInformation::PortablePartititon> parts =
             PartititonInformation::instance().enumerate_drive_partititons(drive_index);
 
         if (parts.empty()) {
             continue;
         }
 
-        for (const PartititonInformation::NativePartititon& part : parts) {
-#ifdef NATIVE
+        // DriveEraser(ErasureMethod, DiskType, passes)
+        erasible_drives_.emplace(std::make_pair(drive_index, 
+            std::make_unique<shredder::DriveEraser>(DriveEraser::ErasureMethod::Smart, parts[0].disk_type, parts)));
+
+        for (const PartititonInformation::PortablePartititon& part : parts) {
             partition_to_drive_[part.root] = drive_index;
-#endif
         }
     }
 }
