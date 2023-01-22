@@ -10,7 +10,12 @@ include_directories(
     )
 
 add_executable(${TARGET} ${SOURCES})
-target_link_libraries(${TARGET} PRIVATE ${Boost_LIBRARIES} helpers file_shredder)
+target_link_libraries(${TARGET} 
+PRIVATE 
+    ${Boost_LIBRARIES} 
+    winapi_helpers 
+    file_shredder
+)
 
 add_test(NAME ${TARGET} COMMAND ${TARGET})
 set_property(TARGET ${TARGET} PROPERTY FOLDER "UnitTests")
