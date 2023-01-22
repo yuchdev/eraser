@@ -46,7 +46,7 @@ std::string ShredderDatabaseWrapper::database_name()
     return std::string {"eraser"};
 #else
     std::wstring wpath = helpers::get_common_appdata_wpath();
-    wpath.append(L"CyberYozh\\");
+    wpath.append(L"SecureEraser\\");
     boost::system::error_code error;
     if (!boost::filesystem::is_directory(wpath)) {
         boost::filesystem::create_directory(wpath, error);
